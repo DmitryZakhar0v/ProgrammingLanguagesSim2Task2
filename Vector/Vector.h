@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 namespace miit::vector
@@ -9,106 +9,106 @@ namespace miit::vector
 	public:
 
 		/*
-		@brief Создание vector'a по initializer_list
-		@param list Лист по которому строится vector
+		@brief РЎРѕР·РґР°РЅРёРµ vector'a РїРѕ initializer_list
+		@param list Р›РёСЃС‚ РїРѕ РєРѕС‚РѕСЂРѕРјСѓ СЃС‚СЂРѕРёС‚СЃСЏ vector
 		*/
 		Vector(const std::initializer_list<int> list);
 
 		/*
-		@brief Чистит памать за vector
+		@brief Р§РёСЃС‚РёС‚ РїР°РјР°С‚СЊ Р·Р° vector
 		*/
 		~Vector();
 
 		/*
-		@brief Получение длинны vector'a
-		@return Количество элементов vector'a
+		@brief РџРѕР»СѓС‡РµРЅРёРµ РґР»РёРЅРЅС‹ vector'a
+		@return РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ vector'a
 		*/
 		int get_size() const;
 
 		/*
-		@brief Добавление элемента в вектор
-		@param Значение элемента
+		@brief Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РІРµРєС‚РѕСЂ
+		@param Р—РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 		*/
 		void append(int value);
 
 		/*
-		@brief Удаление элемента из vector по индексу
-		@param index Индекс элемента
+		@brief РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· vector РїРѕ РёРЅРґРµРєСЃСѓ
+		@param index РРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р°
 		*/
 		void pop(int index);
 
 		/*
-		@brief Получение индекса элемента в списке
-		@param value Искомое значение
-		@return индекс элемента если он есть в vector и -1 если его в нем нет
+		@brief РџРѕР»СѓС‡РµРЅРёРµ РёРЅРґРµРєСЃР° СЌР»РµРјРµРЅС‚Р° РІ СЃРїРёСЃРєРµ
+		@param value РСЃРєРѕРјРѕРµ Р·РЅР°С‡РµРЅРёРµ
+		@return РёРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р° РµСЃР»Рё РѕРЅ РµСЃС‚СЊ РІ vector Рё -1 РµСЃР»Рё РµРіРѕ РІ РЅРµРј РЅРµС‚
 		*/
 		int find(int value) const;
 
 		/*
-		@brief Получение информации об отсутствии элементов в vector
-		@return true если есть элементы и false если нет
+		@brief РџРѕР»СѓС‡РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё РѕР± РѕС‚СЃСѓС‚СЃС‚РІРёРё СЌР»РµРјРµРЅС‚РѕРІ РІ vector
+		@return true РµСЃР»Рё РµСЃС‚СЊ СЌР»РµРјРµРЅС‚С‹ Рё false РµСЃР»Рё РЅРµС‚
 		*/
 		bool is_empty() const;
 
 		/*
-		@brief Перегрузка оператора квадратные скобки
-		@param index Индекс элемента в векторе
-		@return Элемент из вектора
+		@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РєРІР°РґСЂР°С‚РЅС‹Рµ СЃРєРѕР±РєРё
+		@param index РРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р° РІ РІРµРєС‚РѕСЂРµ
+		@return Р­Р»РµРјРµРЅС‚ РёР· РІРµРєС‚РѕСЂР°
 		*/
 		int& operator[](int index);
 
 		/*
-		@brief Перегрузка оператора копирования
-		@param Vector Вектор для копирования
-		@return Скопированный объект типа Vector
+		@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+		@param Vector Р’РµРєС‚РѕСЂ РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+		@return РЎРєРѕРїРёСЂРѕРІР°РЅРЅС‹Р№ РѕР±СЉРµРєС‚ С‚РёРїР° Vector
 		*/
 		Vector& operator=(const Vector& vector);
 
 		/*
-		@brief Перегрузка move оператора
-		@param Vector Список для мува
-		@return Объект типа DLList
+		@brief РџРµСЂРµРіСЂСѓР·РєР° move РѕРїРµСЂР°С‚РѕСЂР°
+		@param Vector РЎРїРёСЃРѕРє РґР»СЏ РјСѓРІР°
+		@return РћР±СЉРµРєС‚ С‚РёРїР° DLList
 		*/
 		Vector& operator=(Vector&& vector) noexcept;
 
 		/*
-		@brief Move конструктор
-		@param vector Вектор для мува
+		@brief Move РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+		@param vector Р’РµРєС‚РѕСЂ РґР»СЏ РјСѓРІР°
 		*/
 		Vector(const Vector& vector);
 
 		/*
-		@brief Конструктор копирования
-		@param vector Вектор для копирования
+		@brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+		@param vector Р’РµРєС‚РѕСЂ РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		*/
 		Vector(Vector&& vector) noexcept;
 
 		/*
-		@brief Перегрузка оператора вывода
-		@param os Поток вывода
-		@param vector Вектор для вывода
+		@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РІС‹РІРѕРґР°
+		@param os РџРѕС‚РѕРє РІС‹РІРѕРґР°
+		@param vector Р’РµРєС‚РѕСЂ РґР»СЏ РІС‹РІРѕРґР°
 		*/
 		friend std::ostream& operator<<(std::ostream& os, Vector& vector) noexcept;
 
 		/*
-		@brief Перегрузка оператора равно
-		@param rha Первый аргумент для сравнения
-		@param lha Второй аргумент для сравнения
-		@return false если равны и true если нет
+		@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° СЂР°РІРЅРѕ
+		@param rha РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+		@param lha Р’С‚РѕСЂРѕР№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+		@return false РµСЃР»Рё СЂР°РІРЅС‹ Рё true РµСЃР»Рё РЅРµС‚
 		*/
 		friend bool operator==(const Vector& rha, const Vector& lha) noexcept;
 
 		/*
-		@brief Перегрузка оператора не равно
-		@param rha Первый аргумент для сравнения
-		@param lha Второй аргумент для сравнения
-		@return true если равны и false если нет
+		@brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РЅРµ СЂР°РІРЅРѕ
+		@param rha РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+		@param lha Р’С‚РѕСЂРѕР№ Р°СЂРіСѓРјРµРЅС‚ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
+		@return true РµСЃР»Рё СЂР°РІРЅС‹ Рё false РµСЃР»Рё РЅРµС‚
 		*/
 		friend bool operator!=(const Vector& rha, const Vector& lha) noexcept;
 
 		/*
-		@brief Преобразование объета в строку
-		@return строка полученная из объекта
+		@brief РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РѕР±СЉРµС‚Р° РІ СЃС‚СЂРѕРєСѓ
+		@return СЃС‚СЂРѕРєР° РїРѕР»СѓС‡РµРЅРЅР°СЏ РёР· РѕР±СЉРµРєС‚Р°
 		*/
 		std::string to_string() const noexcept;
 
