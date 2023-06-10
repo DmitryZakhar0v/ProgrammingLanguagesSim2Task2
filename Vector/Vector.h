@@ -4,7 +4,7 @@
 namespace miit::vector
 {
 
-	class Vector
+	class Vector final 
 	{
 	public:
 
